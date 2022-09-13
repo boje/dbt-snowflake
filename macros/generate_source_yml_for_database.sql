@@ -14,6 +14,7 @@ Then, copy the output into your source.yml file!
     {# Generate source yaml for each database. There are duplicate version entries for now but I would like to fix this in the future. For now, just buck up and clean the text by hand #}
     {% for schema in schemas %}
         {{ codegen.generate_source(schema_name=schema, database_name=db, generate_columns=generate_cols) }}
-    {% endfor %}
+    {% endfor %} 
 
+    select 1
 {% endmacro %}
