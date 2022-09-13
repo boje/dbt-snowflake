@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: shopify_account_1
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_2
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_3
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_4
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_5
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_6
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_7
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_8
+    database: raw
+    tables:
+      - name: location
+      - name: orders
+  - name: shopify_account_9  
+    database: raw
+    tables:
+      - name: location
+      - name: orders
