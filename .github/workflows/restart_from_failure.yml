@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DBT_CLOUD_SERVICE_TOKEN: ${{ secrets.DBT_CLOUD_SERVICE_TOKEN }}
-      DBT_CLOUD_ACCOUNT_ID: 43786
-      JOB_ID: 73796
+      DBT_CLOUD_ACCOUNT_ID: 101899
+      JOB_ID: 127616
     if: github.actor == 'boje'
     steps:
       - uses: actions/checkout@v2
