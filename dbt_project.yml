@@ -21,6 +21,13 @@ require-dbt-version: [">=1.0.0", "<2.0.0"]
 
 models:
   jaffle_shop:
-      materialized: table
-      staging:
-        materialized: view
+    materialized: table
+    staging:
+      materialized: view
+
+seeds:
+  jaffle_shop: # you must include the project name
+    database: raw
+    orders:
+      +column_types:
+        order_date: timestamp
