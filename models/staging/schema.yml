@@ -1,6 +1,7 @@
 version: 2
 
 models:
+  database: analytics
   - name: stg_customers
     columns:
       - name: customer_id
