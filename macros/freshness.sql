@@ -7,7 +7,7 @@
     select
       max({{ loaded_at_field }}) as max_loaded_at,
       {{ current_timestamp() }} as snapshotted_at
-      --,1 as test
+      /*,1 as test*/
     from {{ source }}
     {% if filter %}
     where {{ filter }}
