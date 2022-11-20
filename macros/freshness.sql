@@ -8,12 +8,11 @@
       max({{ current_timestamp() }}) as max_loaded_at,
       /*max({{ loaded_at_field }}) as max_loaded_at_orig,*/
       {{ current_timestamp() }} as snapshotted_at
-      /*,1 as test*/
     from {{ source }}
     {% if filter %}
     where {{ filter }}
     {% endif %}
-    where (select count(*) from {{ source }}) > 110
+    where (select count(*) from {{ source }}) >= (select max(number_of_rows) from raw.jaffle_shop.number_of_rows where lower(table_name) = '{{ source }}')
   {% endcall %}
   {{ return(load_result('collect_freshness').table) }}
 {% endmacro %}
