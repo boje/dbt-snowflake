@@ -30,6 +30,7 @@ models:
 seeds:
   jaffle_shop: # you must include the project name
     database: raw
+    schema: jaffle_shop
     orders:
       +column_types:
         order_date: timestamp
