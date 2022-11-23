@@ -10,9 +10,34 @@ sources:
 
     tables:
       - name: orders
+        description: >
+          One record per order. Includes cancelled and deleted orders.
+        columns:
+          - name: id
+            description: Primary key of the orders table
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: Note that the status can change over time
+            tests:
+              - accepted_values:
+                  values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
 
       - name: customers # this will use the freshness defined above
         freshness: null
+        columns:
+          - name: first_name
+            description: Firstname of customer
+            tests:
+              - dbt_expectations.expect_column_value_lengths_to_be_between:
+                  min_value: 3
+                  max_value: 10
+          - name: last_name
+            description: Lastname of customer
+            tests: 
+              - dbt_expectations.expect_column_values_to_match_regex:
+                  regex: "[A-Z]\\."
 
   - name: stripe
     database: raw
